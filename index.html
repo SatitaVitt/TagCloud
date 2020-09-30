@@ -1,53 +1,132 @@
 <!DOCTYPE html>
+<!--
 <html>
  <head>
-  <title>JavaScript Tag Cloud Chart</title>
+  <title>SATITA | NEED A JOB 💗</title>
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
-  <style>
-    html, body, #container {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    }
-  </style> 
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="index.css">
+  
+</head>
+-->
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>BCT Tag Cloud Chart 16</title>
+  <link href="https://playground.anychart.com/docs/samples/BCT_Tag_Cloud_Chart_16/iframe" rel="canonical">
+  <meta content="Tag Cloud,Weighted List Chart,Word Cloud" name="keywords">
+  <meta content="AnyChart - JavaScript Charts designed to be embedded and integrated" name="description">
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+  <link href="https://cdn.anychart.com/releases/8.9.0/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="index.css">
+  
  </head>
+
   <body>
-   <div id="container"></div>
-    <script>
-        anychart.onDocumentReady(function() {
-        var data = [
-            {"x": "Mandarin chinese", "value": 1090000000, category: "Sino-Tibetan"},
-            {"x": "English", "value": 983000000, category: "Indo-European"},
-            {"x": "Hindustani", "value": 544000000, category: "Indo-European"},
-            {"x": "Spanish", "value": 527000000, category: "Indo-European"},
-            {"x": "Arabic", "value": 422000000, category: "Afro-Asiatic"},
-            {"x": "Malay", "value": 281000000, category: "Austronesian"},
-            {"x": "Russian", "value": 267000000, category: "Indo-European"},
-            {"x": "Bengali", "value": 261000000, category: "Indo-European"},
-            {"x": "Portuguese", "value": 229000000, category: "Indo-European"},
-            {"x": "French", "value": 229000000, category: "Indo-European"},
-            {"x": "Hausa", "value": 150000000, category: "Afro-Asiatic"},
-            {"x": "Punjabi", "value": 148000000, category: "Indo-European"},
-            {"x": "Japanese", "value": 129000000, category: "Japonic"},
-            {"x": "German", "value": 129000000, category: "Indo-European"},
-            {"x": "Persian", "value": 121000000, category: "Indo-European"}
-        ];
-        // create a tag (word) cloud chart
-        var chart = anychart.tagCloud(data);
-        // set a chart title
-        chart.title('15 most spoken languages')
-        // set an array of angles at which the words will be laid out
-        chart.angles([0])
-        // enable a color range
-        chart.colorRange(true);
-        // set the color range length
-        chart.colorRange().length('80%');
-        // display the word cloud chart
-        chart.container("container");
-        chart.draw();
-        });
-    </script>
+    <div id = "container"></div>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-tag-cloud.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script type="text/javascript" src = "index.js"></script>
+    
+    <p id = "demo"></p>
+    <!--1["Diving Certification", "Got Open Water Diving Certification in 2019!"],-->
+    <div id = "to-show" class="hide">
+        <h1>Got my Open Water Diving Certification in Aug 2019!</h1>
+        <p>
+        But funny that I never got the chance to have the physical copy of my diving license, it got delivered from Austrilia to my home in Thailand when I just arrived in New Jersey to pursue my last semester of college :)
+        </p>
+    </div>
+
+    <!--["2Learnt how to do a video editting in 4hrs", "I really can't think of anything to give for my dad's birthday this year lol, since we are so far away"],-->
+    <div id = "to-show" class="hide">
+        <h1>
+        It's a virtual birthday present for my dad's birthday in 2020. 
+        <h1>
+        <p>
+        I really can't think of anything to give for my dad this year since we are so far away lol. But I am glad I know how to edit a video using iMovie Now~
+        </p>   
+    </div>
+
+    <!--["3trilingual"],-->
+    <div id = "to-show" class="hide">
+        <h1>And not excel in any of them :)</h1>
+        <p>just kidding lol</p>
+        
+    </div>
+
+    <!--["4Really want a job", "It's been so long"],-->
+    <div id = "to-show" class="hide">
+        <h1>It's like a forced mate where in order to find a job</h1>
+        <p>I need some industrial experiences, but as a new grad I DONT HAVE IT... And doing side project by just myself or a group of friends is too time consuming, but I dont have a choice :) </p>
+        </p>
+    </div>
+
+    <!--5["王者荣耀", "未成年系统王者荣耀打到至尊真的是尽力了(并不是未成年啊啊啊啊 ..上不去了 求带 XD"],-->
+    <div id = "to-show" class="hide">
+      <h1>
+      未成年系统王者荣耀打到至尊真的是尽力了(并不是未成年啊啊啊啊 </h1>
+      <p>
+      ..上不去了 求带 XD
+      in the end.. I tried :)
+      （每天强制下线可还行
+      </p>
+    </div>
+    
+    <!--6["Proudest Accomplishment", ""],-->
+    <div id = "to-show" class="hide">
+      <h1>
+        1. Japan
+      </h1>
+      
+    </div>
+
+    <!--7["Challengesss", ""],-->
+    <div id = "to-show" class="hide">
+      <h1>
+      CSS is a real hard, love Java :)
+      </h1>
+    </div>
+
+    <!--["Can't Believe that", "I AM ALLERGIC TO VA :) the virginia state, I really have no idea"],-->
+    <div id = "to-show" class="hide">
+      <h1>
+      Believe it or not...</h1>
+      <p>
+      I am ALLERGIC to VA, the state, Virginia.
+      Really have no idea what I am allericing to :)
+      </p>
+    </div>
+    
+    <!--["Extremely interested in...", "CyberSecurity!"],-->
+    <div id = "to-show" class="hide">
+      <h1>
+      CyberSecurity! </h1>
+      <p>
+      And yet there is another forced mate here :)
+      </p>
+    </div>
+
+    <!--["Bake lover", "just love following the receipts"],-->
+    <div id = "to-show" class="hide">
+      <h1>
+      I guess I do have a talent in baking💗~ Check out my baker page!
+      </h1>
+    </div>
+  
+    <!--["Potential Dress DESIGNER!", "--img & link"],-->
+    <div id = "to-show" class="hide">
+      <p>
+      When I was in middle school back in Beijing, I was seriously planning to become a dress designer in the future. I tried to design pretty dresses and actually tried to made one. But I still don't know how to use a sewing machine haha. It is so hard to not break that needle :)
+      </p>
+    </div>
+
   </body>
 </html>
