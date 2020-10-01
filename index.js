@@ -1,3 +1,10 @@
+function hideit(target, index){
+    var divID = document.getElementsByClassName(target);
+    divID[index].id = "hide";
+    divID[index].style.left = 1+"px";
+    divID[index].style.top = 1+"px";
+}
+/*
 var data = [
     {"x": "Diving Certification", "value": 10, "flap": "Got Open Water Diving Certification in 2019!", "key": 0},
     {"x": "Learnt video editting in 4hrs", "value": 10, "flap": "I really can't think of anything to give for my dad's birthday this year lol, since we are so far away", "key": 1},
@@ -11,26 +18,27 @@ var data = [
     {"x": "Bake lover", "value": 10, "flap": "just love following the receipts", "key": 9},
     {"x": "Potential Dress DESIGNER!", "value": 10, "flap": "--img & link", "key": 10},
     
-];
-
-/*
-var dataFlap = [
-    ["Diving Certification", "Got Open Water Diving Certification in 2019!"],
-    ["Learnt how to do a video editting in 4hrs", "I really can't think of anything to give for my dad's birthday this year lol, since we are so far away"],
-    ["Really want a job", "It's been so long"],
-    ["王者荣耀", "未成年系统王者荣耀打到至尊真的是尽力了(并不是未成年啊啊啊啊 ..上不去了 求带 XD"],
-    ["Proudest Accomplishment", ""],
-    ["Challengesss", ""],
-    ["Can't Believe that", "I AM ALLERGIC TO VA :) the virginia state, I really have no idea"],
-    ["Extremely interested in...", "CyberSecurity!"],
-    ["Bake lover", "just love following the receipts"],
-    ["Potential Dress DESIGNER!", "--img & link"],
-    
 ];*/
+
+var data = [
+    {"x": "Diving Certification", "value": 10, "key": 0},
+    {"x": "Learnt video editting in 4hrs", "value": 10, "key": 1},
+    {"x": "Trilingual", "value": 10, "flap": "", "key": 2},
+    {"x": "Really want a job", "value": 10, "key": 3},
+    {"x": "王者荣耀", "value": 10, "key": 4},
+    {"x": "Proudest Accomplishment", "value": 10, "key": 5},
+    {"x": "Challengesss", "value": 10, "key": 6},
+    {"x": "Can't Believe that", "value": 10, "key": 7},
+    {"x": "Extremely interested in...", "value": 10, "key": 8},
+    {"x": "Bake lover", "value": 10, "key": 9},
+    {"x": "Potential Dress DESIGNER!", "value": 10, "key": 10},
+    
+];
 
 anychart.onDocumentReady(function() {
     // create a tag (word) cloud chart
     var chart = anychart.tagCloud(data);
+
     //document.getElementById("demo").innerHTML = data[0].flap;
     // set a chart title
     chart.title('Fun Facts about me!')
@@ -58,67 +66,40 @@ anychart.onDocumentReady(function() {
     
     });
 
-    var prev="";
-    var count = 0;
-    var prevcount = 0;
-
     chart.listen("pointclick", function(event){
-        count++;
-        //document.getElementById("demo").innerHTML = e.point.get("key");
-        //document.querySelector(".div"+e.point.get("key")).style.backgroundColor = "red";
-        var x = document.querySelectorAll("#to-show");
-        //if(prev === event || prev === ""){
-            //alert("?");
-            //x[event.point.get("key")].style.visibility = "visible";
-            //x[event.point.get("key")].style.visibility = "visible";
-            //x[prev.point.get("key")].style.visibility = "hidden";
+        var x = document.querySelectorAll(".to-show");
+       
         var element = x[event.point.get("key")];
-        if (element.className === "hide") {
-            element.className = "show";
-            x[event.point.get("key")].style.left = xposition+"px";
-            x[event.point.get("key")].style.top = yposition+"px";
-            document.getElementsByTagName("body")[0].className = "on";
-            document.getElementById("show-element").className = "active";
+        //alert(element.id);
+        if (element.id === "hide") {
+            element.id = "show";
+            
+            if(event.point.get("key") != '5'){
+                //alert("?");
+                //var width = Math.max(document.documentElement.clientWidth, window.innerWidth);
+                //var height = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+                //alert("width; "+ width + " hight: "+ height);
+                //x[event.point.get("key")].style.right = (width) + "px";
+                
+                //x[event.point.get("key")].style.top = (height/2) + "px";
+            
+                x[event.point.get("key")].style.left = (xposition+100)+"px";
+                x[event.point.get("key")].style.top = (yposition+100)+"px";
+                
+            }
+            x[event.point.get("key")].style.zIndex = "10";
+            
+            //document.getElementsByTagName("body")[0].className = "on";
+            //document.getElementById("show-element").className = "active";
+            
         } else {
-            element.className = "hide";
-            x[event.point.get("key")].style.left = 1+"px";
-            x[event.point.get("key")].style.top = 1+"px";
-            document.getElementsByTagName("body")[0].className = "off";
-            document.getElementById("show-element").className = "";
+            element.id = "hide";
+            x[event.point.get("key")].style.zIndex = "-10";
+            
+            //document.getElementsByTagName("body")[0].className = "off";
+            //document.getElementById("show-element").className = "";
         }
 
-        //var hideMe = document.getElementById('hideMe');
-        //var showelement = document.getElementById('show-element');
-        document.onclick = function(e){
-            alert("??");
-            if(count > prevcount){
-                alert("?");
-                var i;
-                for(i = 0; i < x.length; i++){
-                    x[i].style.display=none;
-                }
-            }
-        }
-        //}else{
-           // x[prev.point.get("key")].style.visibility = "hidden";
-        //}
-        /*
-        var clickx = xposition;
-        var clicky = yposition;
-        x[event.point.get("key")].style.left = clickx+"px";
-        x[event.point.get("key")].style.top = clicky+"px";
-        */
-        prev = element;
-        prevcount = count;
+       
     });     
 });
-
-window.onload = function(){
-    var hideMe = document.getElementById('hideMe');
-    //var showelement = document.getElementById('show-element');
-    document.onclick = function(e){
-       if(e.target.id !== 'hideMe'){
-          hideMe.style.display = 'none';
-       }
-    }
- };
